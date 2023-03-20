@@ -1,0 +1,25 @@
+import numpy as np
+import cv2
+
+switch_case = {
+    ord('a'): 'a키 입력',
+    ord('b'): 'b키 입력',
+    ord('o'): 'o키 입력',
+    65 : 'A키 입력'
+}
+
+image = np.ones((200,300),np.float)
+cv2.namedWindow('Keybord Event')
+cv2.imshow('keyboard Event', image)
+
+while True:
+    key = cv2.waitKeyEx(100)
+    if key==27:
+        break
+    try:
+        result = switch_case[key]
+        print(result)
+    except KeyError:
+        result = -1
+        
+cv2.destroyAllWindows()
