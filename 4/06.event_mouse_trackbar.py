@@ -16,6 +16,7 @@ def onChange(value):  # 트랙바 콜백 함수
 def onMouse(event, x, y, flags, param):
     global image, bar_name
 
+    # 마우스 우클릭시 밝기 10 증가
     if event == cv2.EVENT_RBUTTONDOWN:
         if image[0][0] < 246:
             image = image + 10
@@ -25,11 +26,13 @@ def onMouse(event, x, y, flags, param):
         cv2.setTrackbarPos(bar_name, title, image[0][0])
         cv2.imshow(title, image)
 
+    # 마우스 좌클릭시 밝기 10 감소
     if event == cv2.EVENT_LBUTTONDOWN:
         if image[0][0] > 9:
             image = image - 10
         else:
             image = np.zeros((300, 500), np.uint8)
+        # 트랙바 위치 변경 - 마우스로 클릭했을 때 트랙바의 위치 변경
         cv2.setTrackbarPos(bar_name, title, image[0][0])
         cv2.imshow(title, image)
 
