@@ -13,11 +13,10 @@ switch_case = {
     2621440: "아래쪽 화살표키 입력"  # 0x280000
 }
 
-image = np.ones((200, 300), np.float)
-# cv2.namedWindow('Keyboard Event')
+image = np.ones((200, 300), np.float)  # 행렬을 실수형으로 표현(0~1)
 cv2.imshow("keyboard Event", image)
 while True:
-    key = cv2.waitKeyEx(100)
+    key = cv2.waitKeyEx(100)  # 키보드 입력 대기 100ms 동안 대기 시간동안 입력이 없으면 -1 리턴
     if key == 27:  # esc키를 누르면 종료
         break
     try:

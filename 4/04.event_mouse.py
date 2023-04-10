@@ -18,12 +18,12 @@ def onMouse(event, x, y, flags, param):  # 콜백함수 - 이벤트 내용 출�
         print("마우스 오른쪽 더블클릭")
 
 
-image = np.full((200, 300), 255, np.uint8)
+image = np.full((200, 300), 255, np.uint8)  # 200행 300열 행렬을 흰색으로 초기화
 
 title1, title2 = "Mouse Event1", "Mouse Event2"
 cv2.imshow(title1, image)
 cv2.imshow(title2, image)
 
-cv2.setMouseCallback(title1, onMouse)
+cv2.setMouseCallback(title1, onMouse)  # 마우스 콜백함수 설정
 cv2.waitKey(0)
 cv2.destroyAllWindows()
