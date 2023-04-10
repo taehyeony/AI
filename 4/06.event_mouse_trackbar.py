@@ -41,7 +41,8 @@ image = np.zeros((300, 500), np.uint8)
 title = 'Trackbar & Mouse Event'
 bar_name = 'Brightness'
 cv2.imshow(title, image)
+# 트랙바 생성
 cv2.createTrackbar(bar_name, title, image[0][0], 255, onChange)
-cv2.setMouseCallback(title, onMouse)
+cv2.setMouseCallback(title, onMouse)  # 마우스 콜백 설정
 cv2.waitKey(0)
 cv2.destroyAllWindows()

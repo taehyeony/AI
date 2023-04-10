@@ -1,5 +1,5 @@
 import cv2
-from Common.utils import print_matInfo  # 행렬 정보 출력 함수 임포트
+from utils import print_matInfo  # 행렬 정보 출력 함수 임포트
 
 title1, title2 = "color2gray", "color2color"
 color2gray = cv2.imread("images/read_color.jpg", cv2.IMREAD_GRAYSCALE)
@@ -16,3 +16,4 @@ print_matInfo(title2, color2color)
 cv2.imshow(title1, color2gray)                      # 행렬 정보 영상으로 띄우기
 cv2.imshow(title2, color2color)
 cv2.waitKey(0)
+cv2.destroyAllWindows()

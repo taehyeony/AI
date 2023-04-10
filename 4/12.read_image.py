@@ -26,8 +26,10 @@ def print_matInfo(name, image):
 
 title1, title2 = "gray2gray", "gray2color"  # 윈도우 이름
 # 영상 파일 적재
-gray2gray = cv2.imread("images/read_gray.jpg", cv2.IMREAD_GRAYSCALE)
-gray2color = cv2.imread("images/read_gray.jpg", cv2.IMREAD_COLOR)
+# 흑백으로 이미지 처리
+gray2gray = cv2.imread("images/read_gray.jpg", cv2.IMREAD_GRAYSCALE)  # 1채널
+# 컬러로 이미지 처리
+gray2color = cv2.imread("images/read_gray.jpg", cv2.IMREAD_COLOR)  # 3채널
 
 if gray2gray is None or gray2color is None:  # 예외처리 -영상 파일 읽기 여부 조사
     raise Exception("영상파일 읽기 에러")
@@ -43,3 +45,4 @@ print_matInfo(title2, gray2color)
 cv2.imshow(title1, gray2gray)
 cv2.imshow(title2, gray2color)
 cv2.waitKey(0)
+cv2.destroyAllWindows()
