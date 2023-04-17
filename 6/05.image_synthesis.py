@@ -6,6 +6,7 @@ image2 = cv2.imread("images/add2.jpg", cv2.IMREAD_GRAYSCALE)
 if image1 is None or image2 is None:
     raise Exception("영상 파일 읽기 오류 발생")
 
+
 # 영상 합성
 alpha, beta = 0.6, 0.7                                        # 곱샘 비율
 add_img1 = cv2.add(image1, image2)                            # 두 영상 단순 더하기
